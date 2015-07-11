@@ -5,7 +5,7 @@ export default Ember.Mixin.create({
     this._super(...arguments);
   },
 
-  qpObserver: Ember.observer('controller.anchor', function () {
+  qpObserver: Ember.observer('controller.anchor', function() {
     let elem = Ember.$(`[data-anchor="${this.get('controller.anchor')}"]`);
     if (!elem) {
       return;
