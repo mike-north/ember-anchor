@@ -1,6 +1,6 @@
 {
   "name": "ember-anchor",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple scroll-to-anchor support for Ember.js apps",
   "directories": {
     "doc": "doc",
@@ -11,8 +11,8 @@
     "build": "ember build",
     "test": "ember try:testall"
   },
-  "repository": "https://github.com/truenorth/embrt-anchor.git",
-  "homepage": "https://github.com/truenorth/embrt-anchor",
+  "repository": "https://github.com/truenorth/ember-anchor.git",
+  "homepage": "https://github.com/truenorth/ember-anchor",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -46,6 +46,7 @@
     "ember-cli-babel": "^5.0.0"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "http://mike.works/ember-anchor"
   }
 }
