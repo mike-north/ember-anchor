@@ -1,6 +1,6 @@
-# Ember-anchor
+# ember-anchor
 
-This README outlines the details of collaborating on this Ember addon.
+Allows a feature similar to "anchors", whereby users may scroll to a particular location on the page by clicking links.
 
 ## Installation
 
