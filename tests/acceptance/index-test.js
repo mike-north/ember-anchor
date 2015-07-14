@@ -24,12 +24,32 @@ test('visiting /', assert => {
   click('.third-link');
 
   andThen(function() {
-    assert.equal(currentURL(), '/?anchor=third');
+    assert.equal(currentURL(), '/?a=third');
   });
 
   click('.second-link');
 
   andThen(function() {
-    assert.equal(currentURL(), '/?anchor=second');
+    assert.equal(currentURL(), '/?a=second');
+  });
+});
+
+test('visiting /customized', assert => {
+  visit('/customized');
+  andThen(function() {
+    assert.equal(currentURL(), '/customized');
+    assert.ok($('body').offset().top < 10, 'Body is scrolled to top');
+  });
+
+  click('.third-link');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/customized?custom=third');
+  });
+
+  click('.second-link');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/customized?custom=second');
   });
 });

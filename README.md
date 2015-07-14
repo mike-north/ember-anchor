@@ -55,6 +55,79 @@ Now, in your template, you may build links with a queryParam, and add "anchors" 
 
 ```
 
+## Advanced Configuration
+
+### One View
+
+You can customize the queryParam used for anchors on a single view, by overriding the `anchorQueryParam` property on both the controller and view
+
+**app/controllers/customized.js**
+
+```js
+import Ember from 'ember';
+import ControllerSupport from 'ember-anchor/mixins/controller-support';
+
+export default Ember.Controller.extend(ControllerSupport, {
+  anchorQueryParam: 'custom'
+});
+
+```
+
+**app/views/customized.js**
+
+```js
+import Ember from 'ember';
+import ViewSupport from 'ember-anchor/mixins/view-support';
+
+export default Ember.View.extend(ViewSupport, {
+  anchorQueryParam: 'custom'
+});
+
+```
+
+You should then build your links, and add your `data-*` attributes as follows
+
+```handlebars
+<!-- Build your link /?custom=first -->
+{{link-to 'Go to First' 'index'
+  (query-params custom='first') }}
+
+<!-- Will be scrolled into view, when above link is clicked -->
+<h5 data-custom='first'></h5>
+
+```
+
+### Application Wide
+
+If you wish to use a different queryParam other than `anchor`, as the application-wide default you can configure this addon as follows
+
+**app/configure/environment.js**
+
+```js
+var ENV = {
+  ...
+  emberAnchor: {
+    anchorQueryParam: 'a'
+  },
+  ...
+};
+...
+return ENV;
+
+```
+
+You should then build your links, and add your `data-*` attributes as follows
+
+```handlebars
+<!-- Build your link /?a=first -->
+{{link-to 'Go to First' 'index'
+  (query-params a='first') }}
+
+<!-- Will be scrolled into view, when above link is clicked -->
+<h5 data-a='first'></h5>
+
+```
+
 ## Installation
 
 * `git clone` this repository

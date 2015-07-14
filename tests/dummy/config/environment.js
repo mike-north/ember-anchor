@@ -12,7 +12,13 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
+    contentSecurityPolicy: {
+      'style-src': "'self' 'unsafe-inline'",
+      'img-src': "'self' https://camo.githubusercontent.com"
+    },
+    emberAnchor: {
+      anchorQueryParam: 'a'
+    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
