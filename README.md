@@ -1,10 +1,10 @@
 # ember-anchor
 
-[![Build Status](https://travis-ci.org/truenorth/ember-anchor.svg?branch=master)](https://travis-ci.org/truenorth/ember-anchor)
-[![Dependency Status](https://david-dm.org/truenorth/ember-anchor.svg)](https://david-dm.org/truenorth/ember-anchor)
-[![devDependency Status](https://david-dm.org/truenorth/ember-anchor/dev-status.svg)](https://david-dm.org/truenorth/ember-anchor#info=devDependencies)
+[![Build Status](https://travis-ci.org/mike-north/ember-anchor.svg?branch=master)](https://travis-ci.org/mike-north/ember-anchor)
+[![Dependency Status](https://david-dm.org/mike-north/ember-anchor.svg)](https://david-dm.org/mike-north/ember-anchor)
+[![devDependency Status](https://david-dm.org/mike-north/ember-anchor/dev-status.svg)](https://david-dm.org/mike-north/ember-anchor#info=devDependencies)
 ![NPM Version](https://img.shields.io/npm/v/ember-anchor.svg)
-[![Code Climate](https://codeclimate.com/github/truenorth/ember-anchor/badges/gpa.svg)](https://codeclimate.com/github/truenorth/ember-anchor)
+[![Code Climate](https://codeclimate.com/github/mike-north/ember-anchor/badges/gpa.svg)](https://codeclimate.com/github/mike-north/ember-anchor)
 
 ## Use
 
