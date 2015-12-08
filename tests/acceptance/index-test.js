@@ -25,12 +25,14 @@ test('visiting /', assert => {
 
   andThen(function() {
     assert.equal(currentURL(), '/?a=third');
+    assert.ok($('[data-a=third]').hasClass('highlight'), 'Element is highlighted');
   });
 
   click('.second-link');
 
   andThen(function() {
     assert.equal(currentURL(), '/?a=second');
+    assert.ok($('[data-a=second]').hasClass('highlight'), 'Element is highlighted');
   });
 });
 

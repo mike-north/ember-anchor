@@ -1,0 +1,8 @@
+.highlight {
+  animation: highlight 2s ease-in 1;
+}
+
+@keyframes highlight {
+  0% { background-color: #ffc; }
+  100% { background-color: initial; }
+}
