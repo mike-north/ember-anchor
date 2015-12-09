@@ -1,13 +1,10 @@
 import Ember from 'ember';
-import _computed from 'ember-new-computed';
 
-const { computed: { oneWay } } = Ember;
+const { computed, computed: { oneWay } } = Ember;
 
 export function injectConfig() {
-  return _computed({
-    get() {
-      return this.container.lookup('config:ember-anchor');
-    }
+  return computed(function() {
+    return this.container.lookup('config:ember-anchor');
   });
 }
 
@@ -22,10 +19,8 @@ export default Ember.Mixin.create({
     });
   },
 
-  queryParams: _computed('anchorQueryParam', {
-    get() {
-      let qpValue = this.get('anchorQueryParam');
-      return Ember.A(qpValue ? [qpValue] : []);
-    }
+  queryParams: computed('anchorQueryParam', function() {
+    let qpValue = this.get('anchorQueryParam');
+    return Ember.A(qpValue ? [qpValue] : []);
   })
 });
