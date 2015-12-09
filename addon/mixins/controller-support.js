@@ -17,13 +17,15 @@ export default Ember.Mixin.create({
 
   init() {
     this._super(...arguments);
-    this.set(this.get('anchorQueryParam'), null);
+    Ember.run.next(() => {
+      this.set(this.get('anchorQueryParam'), undefined);
+    });
   },
 
   queryParams: _computed('anchorQueryParam', {
     get() {
       let qpValue = this.get('anchorQueryParam');
-      return Ember.A([qpValue]);
+      return Ember.A(qpValue ? [qpValue] : []);
     }
   })
 });

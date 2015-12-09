@@ -1,0 +1,20 @@
+/*jshint node:true*/
+var VersionChecker = require('ember-cli-version-checker');
+
+module.exports = {
+  description: 'install ember-anchor into a typical project',
+  normalizeEntityName: function() {}, // no-op since we're just adding dependencies
+
+  afterInstall: function () {
+    var checker = new VersionChecker(this);
+    var dep = checker.for('ember', 'bower');
+
+    if (dep.satisfies('>= 2.0')) {
+      return this.addPackageToProject('ember-legacy-views', '~0.2.0');
+    }
+
+    if (dep.satisfies('< 1.12.0')) {
+      return this.addPackageToProject('ember-new-computed', '1.2.0');
+    }
+  }
+};
