@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import { injectConfig } from './controller-support';
 
-const { computed: { oneWay } } = Ember;
+const { computed: { oneWay }, run } = Ember;
 
 export default Ember.Mixin.create({
   _anchorConfig: injectConfig(),
@@ -19,12 +19,12 @@ export default Ember.Mixin.create({
     if (!elem) {
       return;
     }
-    Ember.run.scheduleOnce('afterRender', this, this._scrollToElemPosition);
+    run.scheduleOnce('afterRender', this, this._scrollToElemPosition);
   },
 
   didInsertElement() {
     this._super(...arguments);
-    this._scrollToElemPosition();
+    run.scheduleOnce('afterRender', this, this._scrollToElemPosition);
   },
 
   _scrollToElemPosition() {
