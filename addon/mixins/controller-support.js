@@ -4,7 +4,8 @@ const { computed, computed: { oneWay } } = Ember;
 
 export function injectConfig() {
   return computed(function() {
-    return this.container.lookup('config:ember-anchor');
+    const owner = Ember.getOwner ? Ember.getOwner(this) : this.container;
+    return owner.lookup('config:ember-anchor');
   });
 }
 

@@ -44,6 +44,7 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
   }
+  ENV.EmberENV.RAISE_ON_DEPRECATION = !process.env['ALLOW_DEPRECATIONS'];
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
