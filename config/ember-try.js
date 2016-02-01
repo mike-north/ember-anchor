@@ -1,10 +1,6 @@
 module.exports = {
   scenarios: [
     {
-      name: 'default',
-      dependencies: { }
-    },
-    {
       name: 'ember-1.10',
       dependencies: {
         ember: '~1.10.0'
@@ -56,6 +52,15 @@ module.exports = {
       },
       resolutions: {
         ember: '~2.1.0'
+      }
+    },
+    {
+      name: 'ember-2.2',
+      dependencies: {
+        ember: '~2.2.0'
+      },
+      resolutions: {
+        ember: '~2.2.0'
       }
     },
     {
