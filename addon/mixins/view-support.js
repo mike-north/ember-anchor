@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import { injectConfig } from './controller-support';
 
-const { computed: { oneWay } } = Ember;
+const { computed: { oneWay }, on } = Ember;
 
 export default Ember.Mixin.create({
   _anchorConfig: injectConfig(),
@@ -22,18 +22,14 @@ export default Ember.Mixin.create({
     Ember.run.scheduleOnce('afterRender', this, this._scrollToElemPosition);
   },
 
-  didInsertElement() {
-    this._super(...arguments);
-    this._scrollToElemPosition();
-  },
-
-  _scrollToElemPosition() {
+  _scrollToElemPosition: on('didInsertElement', function() {
     let qp = this.get('anchorQueryParam');
     let qpVal = this.get(`controller.${qp}`);
     let elem = Ember.$(`[data-${qp}="${qpVal}"]`);
     let offset = (elem && elem.offset && elem.offset()) ? elem.offset().top : null;
     if (offset) {
       Ember.$('body').scrollTop(offset);
+      this.trigger('scrolledToElement', elem);
     }
-  }
+  })
 });
