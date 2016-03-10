@@ -24,13 +24,13 @@ test('visiting /', assert => {
   click('.third-link');
 
   andThen(function() {
-    assert.equal(currentURL(), '/?a=third');
+    assert.equal(currentURL(), '/?anc=third');
   });
 
   click('.second-link');
 
   andThen(function() {
-    assert.equal(currentURL(), '/?a=second');
+    assert.equal(currentURL(), '/?anc=second');
   });
 });
 
