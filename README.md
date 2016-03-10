@@ -6,7 +6,25 @@
 ![NPM Version](https://img.shields.io/npm/v/ember-anchor.svg)
 [![Code Climate](https://codeclimate.com/github/mike-north/ember-anchor/badges/gpa.svg)](https://codeclimate.com/github/mike-north/ember-anchor)
 
-## Use
+## Recommended Use
+
+The easiest way to use ember-anchor is with a top-level component on your page, and add the `view-support` mixin to it
+
+```js
+import Ember from 'ember';
+import ViewSupport from 'ember-anchor/mixins/view-support';
+
+export default Ember.Component.extend(ViewSupport, {});
+
+```
+
+
+You should then wrap basically your entire template with this component
+```hbs
+
+```
+
+## Legacy Use (With Ember.View)
 
 On your controller, add a mixin that allows us to use a queryParam like a #hash
 

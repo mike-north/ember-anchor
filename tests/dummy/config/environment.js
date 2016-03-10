@@ -17,7 +17,7 @@ module.exports = function(environment) {
       'img-src': "'self' https://camo.githubusercontent.com"
     },
     emberAnchor: {
-      anchorQueryParam: 'a'
+      anchorQueryParam: 'anc'
     },
     APP: {
       // Here you can pass flags/options to your application instance

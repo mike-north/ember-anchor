@@ -9,12 +9,12 @@ export default Ember.Mixin.create({
 
   init() {
     this._super(...arguments);
-    let controllerProp = `controller.${this.get('anchorQueryParam')}`;
+    let controllerProp = this.get('a') ? 'a' : `controller.${this.get('anchorQueryParam')}`;
     this.addObserver(controllerProp, this, this._onQpChanged);
   },
 
   _onQpChanged() {
-    let controllerProp = `controller.${this.get('anchorQueryParam')}`;
+    let controllerProp = !!Ember.get(this, 'attrs.a') ? 'a' : `controller.${this.get('anchorQueryParam')}`;
     let elem = Ember.$(`[data-anchor="${this.get(controllerProp)}"]`);
     if (!elem) {
       return;
@@ -29,7 +29,7 @@ export default Ember.Mixin.create({
 
   _scrollToElemPosition() {
     let qp = this.get('anchorQueryParam');
-    let qpVal = this.get(`controller.${qp}`);
+    let qpVal = this.get(!!Ember.get(this, 'attrs.a') ? 'a' : `controller.${qp}`);
     let elem = Ember.$(`[data-${qp}="${qpVal}"]`);
     let offset = (elem && elem.offset && elem.offset()) ? elem.offset().top : null;
     if (offset) {
