@@ -8,19 +8,30 @@
 
 ## Recommended Use
 
-The easiest way to use ember-anchor is with a top-level component on your page, and add the `view-support` mixin to it
+The easiest way to use ember-anchor is to setup a controller with a queryParam, and bind it to the `{{ember-anchor}}` component. 
 
-```js
-import Ember from 'ember';
-import ViewSupport from 'ember-anchor/mixins/view-support';
-
-export default Ember.Component.extend(ViewSupport, {});
-
+Add this component to your application.hbs template, passing in the queryParam to be used as your "anchor" param, to the component as property `a`
+**app/templates/mypage.hbs**
+```hbs
+{{ember-anchor a=myQueryParam}}
 ```
 
+Now, in any template, you may build links with a queryParam, and add "anchors" to arbitrary elements in the page, which can be scrolled to.
 
-You should then wrap basically your entire template with this component
 ```hbs
+
+{{link-to 'Go to First' 'index'
+  (query-params anchor='first') }}
+{{link-to 'Go to Second' 'index'
+  (query-params anchor='second') }}
+{{link-to 'Go to Third' 'index'
+  (query-params anchor='third') }}
+
+
+
+<h5 data-anchor='first'></h5>
+<h5 data-anchor='second'></h5>
+<h5 data-anchor='third'></h5>
 
 ```
 
@@ -54,24 +65,8 @@ export default Ember.View.extend(ViewSupport, {
 });
 
 ```
-Now, in your template, you may build links with a queryParam, and add "anchors" to arbitrary elements in the page, which can be scrolled to.
 
-```hbs
-
-{{link-to 'Go to First' 'index'
-  (query-params anchor='first') }}
-{{link-to 'Go to Second' 'index'
-  (query-params anchor='second') }}
-{{link-to 'Go to Third' 'index'
-  (query-params anchor='third') }}
-
-
-
-<h5 data-anchor='first'></h5>
-<h5 data-anchor='second'></h5>
-<h5 data-anchor='third'></h5>
-
-```
+Build links in the same way as described above
 
 ## Advanced Configuration
 
