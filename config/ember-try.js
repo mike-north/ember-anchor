@@ -1,7 +1,7 @@
 /*jshint node:true*/
 
 function scenario(emberVersion) {
-  return {
+  var scenario = {
     name: 'ember-' + emberVersion,
     bower: {
       dependencies: {
@@ -12,6 +12,15 @@ function scenario(emberVersion) {
       }
     }
   };
+  if (emberVersion.split('.')[0] === '1') {
+    scenario.bower.dependencies.jquery = '1.11.3';
+    scenario.npm = {
+      dependencies: {
+        'ember-cli-htmlbars': '0.7.9'
+      }
+    };
+  }
+  return scenario;
 }
 module.exports = {
   scenarios: [
@@ -23,6 +32,7 @@ module.exports = {
     scenario('2.1'),
     scenario('2.2'),
     scenario('2.3'),
+    scenario('2.4'),
     {
       name: 'ember-release',
       bower: {
