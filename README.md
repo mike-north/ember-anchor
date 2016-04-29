@@ -47,7 +47,8 @@ import Ember from 'ember';
 import ControllerSupport from 'ember-anchor/mixins/controller-support';
 
 export default Ember.Controller.extend(ControllerSupport, {
-
+  queryParams: ['anc'],
+  anc: 'first'
 });
 ```
 
@@ -81,7 +82,9 @@ import Ember from 'ember';
 import ControllerSupport from 'ember-anchor/mixins/controller-support';
 
 export default Ember.Controller.extend(ControllerSupport, {
-  anchorQueryParam: 'custom'
+  anchorQueryParam: 'custom',
+  queryParams: ['custom'],
+  custom: 'first'
 });
 
 ```

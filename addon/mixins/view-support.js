@@ -1,9 +1,9 @@
 import Ember from 'ember';
 import { injectConfig } from './controller-support';
 
-const { computed: { oneWay } } = Ember;
+const { Mixin, run: { scheduleOnce }, computed: { oneWay } } = Ember;
 
-export default Ember.Mixin.create({
+export default Mixin.create({
   _anchorConfig: injectConfig(),
   anchorQueryParam: oneWay('_anchorConfig.anchorQueryParam'),
 
@@ -19,7 +19,7 @@ export default Ember.Mixin.create({
     if (!elem) {
       return;
     }
-    Ember.run.scheduleOnce('afterRender', this, this._scrollToElemPosition);
+    scheduleOnce('afterRender', this, this._scrollToElemPosition);
   },
 
   didInsertElement() {

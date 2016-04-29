@@ -14,7 +14,7 @@ module('Acceptance | index', {
   }
 });
 
-test('visiting /', assert => {
+test('visiting /', (assert) => {
   visit('/');
   andThen(function() {
     assert.equal(currentURL(), '/');
@@ -34,7 +34,7 @@ test('visiting /', assert => {
   });
 });
 
-test('visiting /customized', assert => {
+test('visiting /customized', (assert) => {
   visit('/customized');
   andThen(function() {
     assert.equal(currentURL(), '/customized');
