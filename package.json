@@ -3,8 +3,8 @@
   "fastboot": {
     "moduleWhitelist": [],
     "manifest": {
-      "appFile": "fastboot/dummy-e3ff647bfdd56e3c273b680474ec03bd.js",
-      "vendorFile": "fastboot/vendor-6594ab4749030935865a7ee5474a4399.js",
+      "appFile": "fastboot/dummy-47d6780888584bbb15425a9594fae536.js",
+      "vendorFile": "fastboot/vendor-bf3cf9eb4f40733372f35a91e993f08b.js",
       "htmlFile": "index.html"
     }
   }
