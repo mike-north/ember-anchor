@@ -1,6 +1,8 @@
 import Ember from 'ember';
 import ViewSupport from 'ember-anchor/mixins/view-support';
 
-export default Ember.Component.extend(ViewSupport, {
+const { Component } = Ember;
+
+export default Component.extend(ViewSupport, {
   anchorQueryParam: 'custom'
 });
