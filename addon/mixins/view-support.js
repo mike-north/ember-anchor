@@ -1,7 +1,19 @@
 import Ember from 'ember';
-import { injectConfig } from './controller-support';
+import {
+  injectConfig
+} from './controller-support';
 
-const { Mixin, run: { scheduleOnce }, computed: { oneWay } } = Ember;
+const {
+  Mixin,
+  run: {
+    scheduleOnce
+  },
+  computed: {
+    oneWay
+  },
+  get,
+  $
+} = Ember;
 
 export default Mixin.create({
   _anchorConfig: injectConfig(),
@@ -14,8 +26,8 @@ export default Mixin.create({
   },
 
   _onQpChanged() {
-    let controllerProp = !!Ember.get(this, 'attrs.a') ? 'a' : `controller.${this.get('anchorQueryParam')}`;
-    let elem = Ember.$(`[data-anchor="${this.get(controllerProp)}"]`);
+    let controllerProp = !!get(this, 'attrs.a') ? 'a' : `controller.${this.get('anchorQueryParam')}`;
+    let elem = $(`[data-anchor="${this.get(controllerProp)}"]`);
     if (!elem) {
       return;
     }
@@ -29,11 +41,11 @@ export default Mixin.create({
 
   _scrollToElemPosition() {
     let qp = this.get('anchorQueryParam');
-    let qpVal = this.get(!!Ember.get(this, 'attrs.a') ? 'a' : `controller.${qp}`);
-    let elem = Ember.$(`[data-${qp}="${qpVal}"]`);
+    let qpVal = this.get(!!get(this, 'attrs.a') ? 'a' : `controller.${qp}`);
+    let elem = $(`[data-${qp}="${qpVal}"]`);
     let offset = (elem && elem.offset && elem.offset()) ? elem.offset().top : null;
     if (offset) {
-      Ember.$('body').scrollTop(offset);
+      $('body').scrollTop(offset);
     }
   }
 });
