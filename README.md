@@ -32,7 +32,7 @@ export default Ember.Controller.extend(ControllerSupport, {
 
 Now you may build links with a queryParam, and add "anchors" to arbitrary elements in the page, which can be scrolled to.
 
-##### index.hbs
+##### app/templates/index.hbs
 ```hbs
 
 {{link-to 'Go to First' 'index'
