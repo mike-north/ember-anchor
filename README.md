@@ -10,22 +10,37 @@
 
 The easiest way to use ember-anchor is to setup a controller with a queryParam, and bind it to the `{{ember-anchor}}` component. 
 
-Add this component to your application.hbs template, passing in the queryParam to be used as your "anchor" param, to the component as property `a`
-**app/templates/mypage.hbs**
+Add this component to the template corresponding to the controller or route where your queryParams may live, passing in the queryParam to be used as your "anchor" param, to the component as property `a`.
+
+##### app/templates/application.hbs
 ```hbs
-{{ember-anchor a=myQueryParam}}
+{{ember-anchor a=anc}}
 ```
 
-Now, in any template, you may build links with a queryParam, and add "anchors" to arbitrary elements in the page, which can be scrolled to.
+On your controller, add a mixin that allows us to use a queryParam like a #hash.
 
+##### app/controllers/application.js
+```js
+import Ember from 'ember';
+import ControllerSupport from 'ember-anchor/mixins/controller-support';
+
+export default Ember.Controller.extend(ControllerSupport, {
+  queryParams: ['anc'],
+  anc: 'first'
+});
+```
+
+Now you may build links with a queryParam, and add "anchors" to arbitrary elements in the page, which can be scrolled to.
+
+##### index.hbs
 ```hbs
 
 {{link-to 'Go to First' 'index'
-  (query-params anchor='first') }}
+  (query-params anc='first') }}
 {{link-to 'Go to Second' 'index'
-  (query-params anchor='second') }}
+  (query-params anc='second') }}
 {{link-to 'Go to Third' 'index'
-  (query-params anchor='third') }}
+  (query-params anc='third') }}
 
 
 
@@ -37,26 +52,9 @@ Now, in any template, you may build links with a queryParam, and add "anchors" t
 
 ## Legacy Use (With Ember.View)
 
-On your controller, add a mixin that allows us to use a queryParam like a #hash
-
-
-**app/controllers/index.js**
-
-```js
-import Ember from 'ember';
-import ControllerSupport from 'ember-anchor/mixins/controller-support';
-
-export default Ember.Controller.extend(ControllerSupport, {
-  queryParams: ['anc'],
-  anc: 'first'
-});
-```
-
 And on your view, add a mixin that scrolls the page to the appropriate position, based on a queryParam, and in response to queryParam changes
 
-**app/views/index.js**
-
-
+##### app/views/index.js
 ```js
 import Ember from 'ember';
 import ViewSupport from 'ember-anchor/mixins/view-support';
@@ -75,8 +73,7 @@ Build links in the same way as described above
 
 You can customize the queryParam used for anchors on a single view, by overriding the `anchorQueryParam` property on both the controller and view
 
-**app/controllers/customized.js**
-
+##### app/controllers/customized.js
 ```js
 import Ember from 'ember';
 import ControllerSupport from 'ember-anchor/mixins/controller-support';
@@ -89,8 +86,7 @@ export default Ember.Controller.extend(ControllerSupport, {
 
 ```
 
-**app/views/customized.js**
-
+##### app/views/customized.js
 ```js
 import Ember from 'ember';
 import ViewSupport from 'ember-anchor/mixins/view-support';
