@@ -1,9 +1,24 @@
 {
-	"folders":
-	[
-		{
-			"path": ".",
-      "folder_exclude_patterns": ["tmp", "bower_components", "node_modules"]
-		}
-	]
+  "folders":
+  [
+    {
+      "path": ".",
+      "name": "EmberAnchor",
+      "folder_exclude_patterns": ["node_modules", "bower_components", "tmp"]
+    }
+  ],
+  "settings": {
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true
+  },
+  "build_systems": [
+    {
+      "name": "Ember-CLI Server",
+      "shell_cmd": "ember s"
+    },
+    {
+      "name": "Ember-CLI Tests",
+      "shell_cmd": "ember test ci"
+    }
+  ]
 }
