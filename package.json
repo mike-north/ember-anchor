@@ -54,6 +54,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "http://mike.works/ember-anchor"
+    "demoURL": "http://ember-anchor.mike.works"
   }
 }
