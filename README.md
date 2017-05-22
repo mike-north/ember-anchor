@@ -1,5 +1,7 @@
 # ember-anchor
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mike-north/ember-anchor.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/mike-north/ember-anchor.svg?branch=master)](https://travis-ci.org/mike-north/ember-anchor)
 [![Dependency Status](https://david-dm.org/mike-north/ember-anchor.svg)](https://david-dm.org/mike-north/ember-anchor)
 [![devDependency Status](https://david-dm.org/mike-north/ember-anchor/dev-status.svg)](https://david-dm.org/mike-north/ember-anchor#info=devDependencies)
