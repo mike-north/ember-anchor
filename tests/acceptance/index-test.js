@@ -1,24 +1,15 @@
-import { run } from '@ember/runloop';
-import { module, test } from 'qunit';
-import startApp from '../../tests/helpers/start-app';
+// eslint-disable ember/no-global-jquery
+import { test } from 'qunit';
+import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+import $ from 'jquery';
 
-let application;
-
-module('Acceptance | index', {
-  beforeEach() {
-    application = startApp();
-  },
-
-  afterEach() {
-    run(application, 'destroy');
-  }
-});
+moduleForAcceptance('Acceptance | index');
 
 test('visiting /', assert => {
   visit('/');
   andThen(function() {
     assert.equal(currentURL(), '/');
-    assert.ok(find('body').offset().top < 10, 'Body is scrolled to top');
+    assert.ok($('body').offset().top < 10, 'Body is scrolled to top');
   });
 
   click('.third-link');
@@ -38,7 +29,7 @@ test('visiting /customized', assert => {
   visit('/customized');
   andThen(function() {
     assert.equal(currentURL(), '/customized');
-    assert.ok(find('body').offset().top < 10, 'Body is scrolled to top');
+    assert.ok($('body').offset().top < 10, 'Body is scrolled to top');
   });
 
   click('.third-link');
