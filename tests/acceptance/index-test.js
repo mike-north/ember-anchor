@@ -18,7 +18,7 @@ test('visiting /', assert => {
   visit('/');
   andThen(function() {
     assert.equal(currentURL(), '/');
-    assert.ok($('body').offset().top < 10, 'Body is scrolled to top');
+    assert.ok(find('body').offset().top < 10, 'Body is scrolled to top');
   });
 
   click('.third-link');
@@ -38,7 +38,7 @@ test('visiting /customized', assert => {
   visit('/customized');
   andThen(function() {
     assert.equal(currentURL(), '/customized');
-    assert.ok($('body').offset().top < 10, 'Body is scrolled to top');
+    assert.ok(find('body').offset().top < 10, 'Body is scrolled to top');
   });
 
   click('.third-link');

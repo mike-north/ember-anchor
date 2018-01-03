@@ -16,7 +16,7 @@ export default Mixin.create({
   },
 
   _onQpChanged() {
-    let controllerProp = !!get(this, 'attrs.a') ? 'a' : `controller.${this.get('anchorQueryParam')}`;
+    let controllerProp = get(this, 'attrs.a') ? 'a' : `controller.${this.get('anchorQueryParam')}`;
     let elem = $(`[data-anchor="${this.get(controllerProp)}"]`);
     if (!elem) {
       return;
@@ -31,7 +31,7 @@ export default Mixin.create({
 
   _scrollToElemPosition() {
     let qp = this.get('anchorQueryParam');
-    let qpVal = this.get(!!get(this, 'attrs.a') ? 'a' : `controller.${qp}`);
+    let qpVal = this.get(get(this, 'attrs.a') ? 'a' : `controller.${qp}`);
     let elem = $(`[data-${qp}="${qpVal}"]`);
     let offset = elem && elem.offset && elem.offset() ? elem.offset().top : null;
     if (offset) {
