@@ -1,7 +1,5 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
 import ControllerSupport from 'ember-anchor/mixins/controller-support';
-
-const { Controller } = Ember;
 
 export default Controller.extend(ControllerSupport, {
   anchorQueryParam: 'custom',
