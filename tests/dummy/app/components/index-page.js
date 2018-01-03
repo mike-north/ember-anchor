@@ -3,6 +3,4 @@ import ViewSupport from 'ember-anchor/mixins/view-support';
 
 const { Component } = Ember;
 
-export default Component.extend(ViewSupport, {
-
-});
+export default Component.extend(ViewSupport, {});
