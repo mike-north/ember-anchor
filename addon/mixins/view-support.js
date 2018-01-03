@@ -1,7 +1,9 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { scheduleOnce } from '@ember/runloop';
+import { oneWay } from '@ember/object/computed';
+import { get } from '@ember/object';
+import $ from 'jquery';
 import { injectConfig } from './controller-support';
-
-const { Mixin, run: { scheduleOnce }, computed: { oneWay }, get, $ } = Ember;
 
 export default Mixin.create({
   _anchorConfig: injectConfig(),

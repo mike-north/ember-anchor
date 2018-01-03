@@ -1,6 +1,7 @@
-import Ember from 'ember';
-
-const { Mixin, getOwner, computed, computed: { oneWay } } = Ember;
+import Mixin from '@ember/object/mixin';
+import { getOwner } from '@ember/application';
+import { computed } from '@ember/object';
+import { oneWay } from '@ember/object/computed';
 
 export function injectConfig() {
   return computed(function() {
