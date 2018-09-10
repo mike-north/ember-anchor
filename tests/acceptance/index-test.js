@@ -1,7 +1,6 @@
-// eslint-disable ember/no-global-jquery
 import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
-import $ from 'jquery';
+import { visit, currentURL, click } from '@ember/test-helpers';
 
 module('Acceptance | index', function(hooks) {
   setupApplicationTest(hooks);
@@ -9,7 +8,7 @@ module('Acceptance | index', function(hooks) {
   test('visiting /', async assert => {
     await visit('/');
     assert.equal(currentURL(), '/');
-    assert.ok($('body').offset().top < 10, 'Body is scrolled to top');
+    assert.ok(document.body.offsetTop < 10, 'Body is scrolled to top');
 
     await click('.third-link');
 
@@ -23,7 +22,7 @@ module('Acceptance | index', function(hooks) {
   test('visiting /customized', async assert => {
     await visit('/customized');
     assert.equal(currentURL(), '/customized');
-    assert.ok($('body').offset().top < 10, 'Body is scrolled to top');
+    assert.ok(document.body.offsetTop < 10, 'Body is scrolled to top');
 
     await click('.third-link');
 

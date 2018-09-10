@@ -2,7 +2,6 @@ import Mixin from '@ember/object/mixin';
 import { scheduleOnce } from '@ember/runloop';
 import { oneWay } from '@ember/object/computed';
 import { get } from '@ember/object';
-import $ from 'jquery';
 import { injectConfig } from './controller-support';
 
 export default Mixin.create({
@@ -16,12 +15,13 @@ export default Mixin.create({
   },
 
   _onQpChanged() {
-    let controllerProp = get(this, 'attrs.a') ? 'a' : `controller.${this.get('anchorQueryParam')}`;
-    let elem = $(`[data-anchor="${this.get(controllerProp)}"]`);
+    let controllerProp = get(this, 'a') ? 'a' : `controller.${this.get('anchorQueryParam')}`;
+    let qp = this.get('anchorQueryParam');
+    let elem = document.querySelector(`[data-${qp}="${this.get(controllerProp)}"]`);
     if (!elem) {
       return;
     }
-    scheduleOnce('afterRender', this, this._scrollToElemPosition);
+    scheduleOnce('afterRender', this, '_scrollToElemPosition');
   },
 
   didInsertElement() {
@@ -31,11 +31,11 @@ export default Mixin.create({
 
   _scrollToElemPosition() {
     let qp = this.get('anchorQueryParam');
-    let qpVal = this.get(get(this, 'attrs.a') ? 'a' : `controller.${qp}`);
-    let elem = $(`[data-${qp}="${qpVal}"]`);
-    let offset = elem && elem.offset && elem.offset() ? elem.offset().top : null;
+    let qpVal = this.get(get(this, 'a') ? 'a' : `controller.${qp}`);
+    let elem = document.querySelector(`[data-${qp}="${qpVal}"]`);
+    let offset = elem && elem.offsetTop;
     if (offset) {
-      $('body').scrollTop(offset);
+      elem.scrollIntoView();
     }
   }
 });
