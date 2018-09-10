@@ -1,46 +1,36 @@
 // eslint-disable ember/no-global-jquery
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+import { module, test } from 'qunit';
+import { setupApplicationTest } from 'ember-qunit';
 import $ from 'jquery';
 
-moduleForAcceptance('Acceptance | index');
+module('Acceptance | index', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('visiting /', assert => {
-  visit('/');
-  andThen(function() {
+  test('visiting /', async assert => {
+    await visit('/');
     assert.equal(currentURL(), '/');
     assert.ok($('body').offset().top < 10, 'Body is scrolled to top');
-  });
 
-  click('.third-link');
+    await click('.third-link');
 
-  andThen(function() {
     assert.equal(currentURL(), '/?anc=third');
-  });
 
-  click('.second-link');
+    await click('.second-link');
 
-  andThen(function() {
     assert.equal(currentURL(), '/?anc=second');
   });
-});
 
-test('visiting /customized', assert => {
-  visit('/customized');
-  andThen(function() {
+  test('visiting /customized', async assert => {
+    await visit('/customized');
     assert.equal(currentURL(), '/customized');
     assert.ok($('body').offset().top < 10, 'Body is scrolled to top');
-  });
 
-  click('.third-link');
+    await click('.third-link');
 
-  andThen(function() {
     assert.equal(currentURL(), '/customized?custom=third');
-  });
 
-  click('.second-link');
+    await click('.second-link');
 
-  andThen(function() {
     assert.equal(currentURL(), '/customized?custom=second');
   });
 });

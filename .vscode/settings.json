@@ -1,5 +1,4 @@
 {
   "javascript.implicitProjectConfig.checkJs": true,
-  "editor.formatOnSave": true,
   "eslint.enable": true
 }
