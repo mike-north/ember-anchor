@@ -29,7 +29,7 @@
     "@ember/optional-features": "0.7.0",
     "@mike-north/js-lib-renovate-config": "0.0.1",
     "@mike-north/js-lib-semantic-release-config": "0.0.0-development",
-    "@types/ember": "2.8.4",
+    "@types/ember": "2.8.33",
     "@types/qunit": "2.0.31",
     "broccoli-asset-rev": "^2.7.0",
     "ember-cli": "~3.5.0",
