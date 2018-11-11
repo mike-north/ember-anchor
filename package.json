@@ -54,8 +54,7 @@
     "eslint-plugin-node": "^7.0.1",
     "husky": "1.1.3",
     "loader.js": "^4.7.0",
-    "qunit-dom": "^0.8.0",
-    "travis-deploy-once": "5.0.9"
+    "qunit-dom": "^0.8.0"
   },
   "keywords": [
     "ember-addon"
@@ -84,5 +83,11 @@
   },
   "release": {
     "extends": "@mike-north/js-lib-semantic-release-config"
+  },
+  "optionalDependencies": {
+    "@mike-north/js-lib-renovate-config": "1.0.0",
+    "@mike-north/js-lib-semantic-release-config": "1.0.0",
+    "semantic-release": "^15.10.8",
+    "travis-deploy-once": "^5.0.9"
   }
 }
