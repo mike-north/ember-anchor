@@ -1,3 +1,22 @@
+# [0.2.0](https://github.com/mike-north/ember-anchor/compare/v0.1.8...v0.2.0) (2018-11-14)
+
+
+### Bug Fixes
+
+* add missing dependencies ([a4c7747](https://github.com/mike-north/ember-anchor/commit/a4c7747))
+* add missing deploy dependencies ([0f4a39a](https://github.com/mike-north/ember-anchor/commit/0f4a39a))
+* address hbs lint errors ([c25e8a7](https://github.com/mike-north/ember-anchor/commit/c25e8a7))
+* break out canary tests into their own stage ([9b0cda6](https://github.com/mike-north/ember-anchor/commit/9b0cda6))
+* break out canary tests into their own stage ([8fccd17](https://github.com/mike-north/ember-anchor/commit/8fccd17))
+* break out canary tests into their own stage ([cc59ce8](https://github.com/mike-north/ember-anchor/commit/cc59ce8))
+* ember init ([31e7cec](https://github.com/mike-north/ember-anchor/commit/31e7cec))
+* update ember-cli ([49ef3bb](https://github.com/mike-north/ember-anchor/commit/49ef3bb))
+
+
+### Features
+
+* drop IE9 & IE10 support ([b0ebba4](https://github.com/mike-north/ember-anchor/commit/b0ebba4))
+
 # [0.2.0](https://github.com/mike-north/ember-anchor/compare/v0.1.8...v0.2.0) (2018-11-12)
 
 
