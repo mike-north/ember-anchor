@@ -27,7 +27,7 @@
     "@commitlint/config-conventional": "7.1.2",
     "@commitlint/travis-cli": "7.2.1",
     "@ember/optional-features": "0.7.0",
-    "@types/ember": "2.8.33",
+    "@types/ember": "2.8.34",
     "@types/qunit": "2.5.3",
     "broccoli-asset-rev": "3.0.0",
     "ember-cli": "3.5.1",
