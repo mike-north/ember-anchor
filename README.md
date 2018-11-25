@@ -159,5 +159,3 @@ You should then build your links, and add your `data-*` attributes as follows
 * `ember build`
 
 For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
-
-![Analytics](https://ga-beacon.appspot.com/UA-66610985-1/mike-north/ember-anchor/readme)
