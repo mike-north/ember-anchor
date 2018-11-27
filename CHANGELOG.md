@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/mike-north/ember-anchor/compare/v1.0.0...v1.0.1) (2018-11-27)
+
+
+### Bug Fixes
+
+* optionalDependencies -> devDependencies ([ea77598](https://github.com/mike-north/ember-anchor/commit/ea77598))
+
 # [1.0.0](https://github.com/mike-north/ember-anchor/compare/v0.1.8...v1.0.0) (2018-11-25)
 
 
