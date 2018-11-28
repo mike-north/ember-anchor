@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/mike-north/ember-anchor/compare/v1.0.1...v1.0.2) (2018-11-28)
+
+
+### Bug Fixes
+
+* remove ember-disable-prototype-extensions ([79c9980](https://github.com/mike-north/ember-anchor/commit/79c9980)), closes [#119](https://github.com/mike-north/ember-anchor/issues/119)
+
 ## [1.0.1](https://github.com/mike-north/ember-anchor/compare/v1.0.0...v1.0.1) (2018-11-27)
 
 
