@@ -12,7 +12,6 @@
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember try:each",
-    "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release"
   },
   "repository": "https://github.com/mike-north/ember-anchor.git",
@@ -54,7 +53,6 @@
     "husky": "1.2.0",
     "loader.js": "4.7.0",
     "semantic-release": "15.12.3",
-    "travis-deploy-once": "5.0.9",
     "qunit-dom": "0.8.2"
   },
   "keywords": [
