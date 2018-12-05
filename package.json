@@ -64,7 +64,7 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "http://ember-anchor.mike.works"
+    "demoURL": "https://ember-anchor-demo.herokuapp.com/"
   },
   "toolchain": {
     "node": "8.11.4",
