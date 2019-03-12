@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/mike-north/ember-anchor/compare/v1.0.2...v1.0.3) (2019-03-12)
+
+
+### Bug Fixes
+
+* add installation command to README ([4058feb](https://github.com/mike-north/ember-anchor/commit/4058feb))
+
 ## [1.0.2](https://github.com/mike-north/ember-anchor/compare/v1.0.1...v1.0.2) (2018-11-28)
 
 
