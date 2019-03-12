@@ -4,6 +4,10 @@
 ![NPM Version](https://img.shields.io/npm/v/ember-anchor.svg)
 [![Code Climate](https://codeclimate.com/github/mike-north/ember-anchor/badges/gpa.svg)](https://codeclimate.com/github/mike-north/ember-anchor)
 
+## Installation
+
+`ember install ember-anchor`
+
 ## Recommended Use
 
 The easiest way to use ember-anchor is to setup a controller with a queryParam, and bind it to the `{{ember-anchor}}` component. 
