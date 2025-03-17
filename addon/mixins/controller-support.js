@@ -16,7 +16,10 @@ export default Mixin.create({
 
   init() {
     let qpValue = this.get('anchorQueryParam');
-    this.queryParams = qpValue ? [qpValue] : [];
+    if (qpValue) {
+      if (!this.queryParams) this.queryParams = [];
+      this.queryParams.addObject(qpValue);
+    }
     this._super(...arguments);
   }
 });
